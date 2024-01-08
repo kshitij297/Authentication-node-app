@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
+// Mysql connection
 require("./src/helper/mysql/connection");
+//Mongodb connection
+require("./src/helper/mongodb/connection").connect();
+
 const wrapRoutes = require("./src/routes/wrap-routes");
 
 app.use(express.json());
